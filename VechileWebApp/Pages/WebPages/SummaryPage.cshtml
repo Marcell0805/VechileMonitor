@@ -1,0 +1,49 @@
+﻿@page
+@model VechileWebApp.Pages.WebPages.SummaryPageModel
+<div class="row">
+    <table class="arrowes-table table-striped">
+        <thead>
+            <tr>
+                <th>Contractor Name</th>
+                <th>No. of vehicles</th>
+                <th>Total Tons</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @*@foreach (var item in Model.DriverBehaviour.OrderByDescending(x => x.DriverName))
+            {               
+                <tr>
+                    <td>@Html.HiddenFor(m => item.DriverId) @Html.ActionLink(item.DriverName, "Operator", "Operators", new { area = "VehicleManagement", operatorId = item.DriverId })</td>
+                    <td>@item.AlarmType : <span class="brand-red">@item.TypeCount</span></td>
+                    <td>@item.TotalDistanceForPeriod</td>
+                    <td>
+                        @{
+                            var avg = @Math.Truncate(1000 * item.AverageAlarmPerKmDriven) / 1000;
+                        }
+                        @avg
+                    </td>
+                    <td>
+                        @{
+                            var relScore = @Math.Truncate(1000 * @item.RelativeDriverScore) / 1000;
+
+                            if (relScore.ToString().StartsWith("-") == true)
+                            {
+                                <span class="brand-red">@relScore</span>
+                            }
+                            if (relScore.ToString().StartsWith("-") == false)
+                            {
+                                <span class="brand-green">+@relScore</span>
+                            }
+
+                        }
+                    </td>
+                </tr>
+            }*@
+        </tbody>
+    </table>
+</div>
+
+
+@{
+}
