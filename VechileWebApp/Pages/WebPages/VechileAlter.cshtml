@@ -1,10 +1,37 @@
 ﻿@page
-<h1>Vehicle Details</h1>
-<p>Alter the details here</p>
-<select name="contractors">
-    <option value="">Select a contractor</option>    
-</select>
-
 @model VechileWebApp.Pages.WebPages.VechileAlterModel
-@{
-}
+<p>Manage Vehicle Details</p>
+
+Select a vehicle to manage:
+<br />
+<select name="contractors">
+    <option value="">Vehicle select...</option>    
+</select>
+<div>
+    <form method="post">
+         <div class="form-group">
+             Type:<br />
+            <input type="text" name="contractorName"> 
+        </div>
+         <div class="form-group">
+             Register Number:<br />
+            <input type="email" name="emailAddress" id="emailAddress"> 
+        </div>
+         <div class="form-group">
+             Model:<br />
+            <input type="tel" name="contractorPhone"> 
+        </div>
+        <div class="form-group">
+             Weight:<br />
+            <input type="number" name="contractorPhone"> 
+        </div>
+         <div class="form-group">
+             <br />
+            <input type="submit" value="Update" asp-page-handler="Update">
+            <input type="submit" value="Delete" asp-page-handler="Delete">
+        </div>      
+       
+    </form>
+</div>
+
+
